@@ -24,5 +24,7 @@ protocol SearchResultsRoutingLogic: AnyObject {
 
 protocol SearchResultsDataStore: AnyObject {}
 
-protocol SearchResultsWorkingLogic {}
+protocol SearchResultsWorkingLogic {
+    func fetch(queryString: String, completion: ResultCompletion<ImageResponse>?)
+}
 

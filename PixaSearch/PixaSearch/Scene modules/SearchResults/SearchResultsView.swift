@@ -39,7 +39,6 @@ class PixaView: UIView {
 
 final class SearchResultsView: PixaView {
 
-
     override func setupContent() {
         self.backgroundColor = .lightGray
     }

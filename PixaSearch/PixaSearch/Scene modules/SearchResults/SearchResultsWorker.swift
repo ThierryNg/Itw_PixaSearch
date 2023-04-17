@@ -8,4 +8,16 @@
 
 class SearchResultsWorker: SearchResultsWorkingLogic {
 
+    func fetch(queryString: String, completion: ResultCompletion<ImageResponse>?) {
+        let request = ImageListRequest(queryString: queryString)
+
+        NetworkClient.shared.request(request) { result in
+            switch result {
+            case .success(let value):
+                completion?(.success(value))
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
+    }
 }

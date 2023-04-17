@@ -10,7 +10,7 @@ import Alamofire
 class Request<T: Response> {
 
     /// Domain component of the Request's URL
-    var domain: String { "https://pixabay.com/api/" }
+    var domain: String { "https://pixabay.com/api" }
 
     /// Path component of the Request's URL (To support videos in the future)
     var path: String { "" }

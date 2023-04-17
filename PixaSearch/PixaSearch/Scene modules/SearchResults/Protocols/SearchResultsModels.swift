@@ -9,7 +9,9 @@
 enum SearchResults {
 
     enum Search {
-        struct Request {}
+        struct Request {
+            let queryString: String
+        }
 
         struct Response {}
 
