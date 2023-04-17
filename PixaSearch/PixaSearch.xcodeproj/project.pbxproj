@@ -26,6 +26,8 @@
 		8A15C45C29ED6FE700D2838D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45B29ED6FE700D2838D /* Request.swift */; };
 		8A15C45E29ED6FEE00D2838D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45D29ED6FEE00D2838D /* Response.swift */; };
 		8A15C46029ED753C00D2838D /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45F29ED753C00D2838D /* ImageRequest.swift */; };
+		8A15C46329ED75F100D2838D /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46229ED75F100D2838D /* ImageResponse.swift */; };
+		8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46529ED76D200D2838D /* PixaImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		8A15C45B29ED6FE700D2838D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		8A15C45D29ED6FEE00D2838D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8A15C45F29ED753C00D2838D /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		8A15C46229ED75F100D2838D /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		8A15C46529ED76D200D2838D /* PixaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +88,9 @@
 			children = (
 				8A15C43D29ED631300D2838D /* App */,
 				8A15C43C29ED630000D2838D /* Network */,
+				8A15C46429ED76B100D2838D /* Shared models */,
 				8A15C43F29ED633900D2838D /* Scene modules */,
-				8A15C42C29ED615700D2838D /* Main.storyboard */,
 				8A15C43E29ED631F00D2838D /* Resources */,
-				8A15C43129ED615800D2838D /* LaunchScreen.storyboard */,
 				8A15C43429ED615800D2838D /* Info.plist */,
 			);
 			path = PixaSearch;
@@ -96,10 +99,9 @@
 		8A15C43C29ED630000D2838D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8A15C45629ED6E3100D2838D /* NetworkClient.swift */,
-				8A15C45B29ED6FE700D2838D /* Request.swift */,
+				8A15C46129ED75E100D2838D /* NetworkClient */,
 				8A15C45F29ED753C00D2838D /* ImageRequest.swift */,
-				8A15C45D29ED6FEE00D2838D /* Response.swift */,
+				8A15C46229ED75F100D2838D /* ImageResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -116,6 +118,8 @@
 		8A15C43E29ED631F00D2838D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A15C42C29ED615700D2838D /* Main.storyboard */,
+				8A15C43129ED615800D2838D /* LaunchScreen.storyboard */,
 				8A15C42F29ED615800D2838D /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -159,6 +163,24 @@
 				8A15C44629ED681A00D2838D /* SearchResultsProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A15C46129ED75E100D2838D /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C45629ED6E3100D2838D /* NetworkClient.swift */,
+				8A15C45B29ED6FE700D2838D /* Request.swift */,
+				8A15C45D29ED6FEE00D2838D /* Response.swift */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		8A15C46429ED76B100D2838D /* Shared models */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C46529ED76D200D2838D /* PixaImage.swift */,
+			);
+			path = "Shared models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,12 +265,14 @@
 				8A15C42729ED615700D2838D /* AppDelegate.swift in Sources */,
 				8A15C42929ED615700D2838D /* SceneDelegate.swift in Sources */,
 				8A15C46029ED753C00D2838D /* ImageRequest.swift in Sources */,
+				8A15C46329ED75F100D2838D /* ImageResponse.swift in Sources */,
 				8A15C44B29ED681A00D2838D /* SearchResultsWorker.swift in Sources */,
 				8A15C44F29ED681A00D2838D /* SearchResultsProtocols.swift in Sources */,
 				8A15C45E29ED6FEE00D2838D /* Response.swift in Sources */,
 				8A15C44D29ED681A00D2838D /* SearchResultsModels.swift in Sources */,
 				8A15C44E29ED681A00D2838D /* SearchResultsViewController.swift in Sources */,
 				8A15C45229ED681A00D2838D /* SearchResultsView.swift in Sources */,
+				8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */,
 				8A15C44A29ED681A00D2838D /* SearchResultsPresenter.swift in Sources */,
 				8A15C45029ED681A00D2838D /* SearchResultsBuilder.swift in Sources */,
 				8A15C45129ED681A00D2838D /* SearchResultsInteractor.swift in Sources */,

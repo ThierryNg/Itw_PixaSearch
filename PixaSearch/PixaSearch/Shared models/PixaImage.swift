@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct PixaImage: Codable {
+
+    let id: Int
+    let previewURL: String
+    let largeImageURL: String
+    let user: String
+}

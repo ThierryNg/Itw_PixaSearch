@@ -8,6 +8,9 @@
 import Foundation
 import Alamofire
 
+typealias Completion<T> = (T) -> Void
+typealias ResultCompletion<T> = (Result<T, Error>) -> Void
+
 final class NetworkClient {
 
     // MARK: - Singleton Initialization
@@ -30,27 +33,32 @@ final class NetworkClient {
         )
     }
 
-    func request<T: Response>(_ request: Request<T>) async throws -> T {
+    func request<T: Response>(_ request: Request<T>, completion: ResultCompletion<T>? = nil) {
 
         debugPrint("Initiating request 🌐 \(request.method) \(request.url)")
 
-        do {
-            return try await NetworkClient.dataRequestFrom(request: request)
-                .validate(statusCode: 200 ..< 300)
-                .serializingDecodable(T.self)
-                .value
-        } catch let afError as AFError {
-            if afError.isResponseValidationError {
-                debugPrint("[ERROR] Validation error : \(afError)", "onUrl: \(request.url)")
-                guard case let .responseValidationFailed(reason) = afError,
-                      case let .unacceptableStatusCode(statusCode) = reason else {
-                    throw afError
+        let dataRequest = NetworkClient.dataRequestFrom(request: request)
+
+        dataRequest.validate(statusCode: 200 ..< 300).responseDecodable(of: T.self) { afResponse in
+            switch afResponse.result {
+            case let .success(responseObject):
+                debugPrint("✅ Finished serializing \(String(describing: request.self))")
+                completion?(.success(responseObject))
+
+            case let .failure(afError) where afError.isResponseValidationError:
+                guard
+                    case let .responseValidationFailed(reason) = afError,
+                    case let .unacceptableStatusCode(statusCode) = reason
+                else {
+                    completion?(.failure(afError))
+                    return
                 }
+
                 let httpError: HTTPError = .init(rawValue: statusCode) ?? .unhandled
-                throw httpError
-            } else {
+                completion?(.failure(httpError))
+            case let .failure(afError):
                 debugPrint("[ERROR] on url : \(request.url)\n----> \(afError.localizedDescription)")
-                throw afError
+                completion?(.failure(afError))
             }
         }
     }
