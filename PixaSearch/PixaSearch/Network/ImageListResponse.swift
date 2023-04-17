@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageResponse: Response {
+struct ImageListResponse: Response {
     let total: Int
     let totalHits: Int
     let hits: [PixaImage]

@@ -26,10 +26,10 @@ extension SearchResultsInteractor: SearchResultsBusinessLogic {
             switch result {
             case .success(let imageListResponse):
                 print("Found \(imageListResponse.total) hits in total")
-                self.presenter.present(.init())
+                self.presenter.present(SearchResults.Search.Response(imageListResponse: imageListResponse, error: nil))
             case .failure(let error):
                 debugPrint("[ERROR] when fetching results : \(error.localizedDescription)")
-                self.presenter.present(.init())
+                self.presenter.present(SearchResults.Search.Response(imageListResponse: nil, error: error))
             }
         }
     }

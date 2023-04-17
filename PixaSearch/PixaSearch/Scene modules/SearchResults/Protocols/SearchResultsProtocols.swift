@@ -25,6 +25,6 @@ protocol SearchResultsRoutingLogic: AnyObject {
 protocol SearchResultsDataStore: AnyObject {}
 
 protocol SearchResultsWorkingLogic {
-    func fetch(queryString: String, completion: ResultCompletion<ImageResponse>?)
+    func fetch(queryString: String, completion: ResultCompletion<ImageListResponse>?)
 }
 

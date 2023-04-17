@@ -15,6 +15,8 @@ class SearchResultsViewController: UIViewController {
 
     private lazy var rootView = SearchResultsView()
 
+    let searchThrottleSelector = #selector(throttledSearch(searchBar:))
+
     // MARK: - Constants
 
     enum Constants {
@@ -61,17 +63,19 @@ class SearchResultsViewController: UIViewController {
 extension SearchResultsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        let selector = #selector(throttledSearch(searchBar:))
-
         print("Text changed")
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: selector, object: searchBar)
-        perform(selector, with: searchBar, afterDelay: Constants.searchThrottleSpeed)
+        NSObject.cancelPreviousPerformRequests(
+            withTarget: self,
+            selector: self.searchThrottleSelector,
+            object: searchBar
+        )
+        perform(self.searchThrottleSelector, with: searchBar, afterDelay: Constants.searchThrottleSpeed)
     }
 }
 
 extension SearchResultsViewController: SearchResultsDisplayLogic {
 
     func display(_ viewModel: SearchResults.Search.ViewModel) {
-
+        self.rootView.viewModel = viewModel
     }
 }

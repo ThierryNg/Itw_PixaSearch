@@ -25,9 +25,10 @@
 		8A15C45A29ED6FD000D2838D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8A15C45929ED6FD000D2838D /* Alamofire */; };
 		8A15C45C29ED6FE700D2838D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45B29ED6FE700D2838D /* Request.swift */; };
 		8A15C45E29ED6FEE00D2838D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45D29ED6FEE00D2838D /* Response.swift */; };
-		8A15C46029ED753C00D2838D /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45F29ED753C00D2838D /* ImageRequest.swift */; };
-		8A15C46329ED75F100D2838D /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46229ED75F100D2838D /* ImageResponse.swift */; };
+		8A15C46029ED753C00D2838D /* ImageListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C45F29ED753C00D2838D /* ImageListRequest.swift */; };
+		8A15C46329ED75F100D2838D /* ImageListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46229ED75F100D2838D /* ImageListResponse.swift */; };
 		8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46529ED76D200D2838D /* PixaImage.swift */; };
+		8A15C46929ED898600D2838D /* NGUIKitHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 8A15C46829ED898600D2838D /* NGUIKitHelpers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +51,8 @@
 		8A15C45629ED6E3100D2838D /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		8A15C45B29ED6FE700D2838D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		8A15C45D29ED6FEE00D2838D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		8A15C45F29ED753C00D2838D /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
-		8A15C46229ED75F100D2838D /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		8A15C45F29ED753C00D2838D /* ImageListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListRequest.swift; sourceTree = "<group>"; };
+		8A15C46229ED75F100D2838D /* ImageListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListResponse.swift; sourceTree = "<group>"; };
 		8A15C46529ED76D200D2838D /* PixaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A15C46929ED898600D2838D /* NGUIKitHelpers in Frameworks */,
 				8A15C45A29ED6FD000D2838D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				8A15C46129ED75E100D2838D /* NetworkClient */,
-				8A15C45F29ED753C00D2838D /* ImageRequest.swift */,
-				8A15C46229ED75F100D2838D /* ImageResponse.swift */,
+				8A15C45F29ED753C00D2838D /* ImageListRequest.swift */,
+				8A15C46229ED75F100D2838D /* ImageListResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -201,6 +203,7 @@
 			name = PixaSearch;
 			packageProductDependencies = (
 				8A15C45929ED6FD000D2838D /* Alamofire */,
+				8A15C46829ED898600D2838D /* NGUIKitHelpers */,
 			);
 			productName = PixaSearch;
 			productReference = 8A15C42329ED615700D2838D /* PixaSearch.app */;
@@ -232,6 +235,7 @@
 			mainGroup = 8A15C41A29ED615700D2838D;
 			packageReferences = (
 				8A15C45829ED6FD000D2838D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8A15C46729ED898600D2838D /* XCRemoteSwiftPackageReference "NGUIKitHelpers" */,
 			);
 			productRefGroup = 8A15C42429ED615700D2838D /* Products */;
 			projectDirPath = "";
@@ -264,8 +268,8 @@
 				8A15C45C29ED6FE700D2838D /* Request.swift in Sources */,
 				8A15C42729ED615700D2838D /* AppDelegate.swift in Sources */,
 				8A15C42929ED615700D2838D /* SceneDelegate.swift in Sources */,
-				8A15C46029ED753C00D2838D /* ImageRequest.swift in Sources */,
-				8A15C46329ED75F100D2838D /* ImageResponse.swift in Sources */,
+				8A15C46029ED753C00D2838D /* ImageListRequest.swift in Sources */,
+				8A15C46329ED75F100D2838D /* ImageListResponse.swift in Sources */,
 				8A15C44B29ED681A00D2838D /* SearchResultsWorker.swift in Sources */,
 				8A15C44F29ED681A00D2838D /* SearchResultsProtocols.swift in Sources */,
 				8A15C45E29ED6FEE00D2838D /* Response.swift in Sources */,
@@ -504,6 +508,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8A15C46729ED898600D2838D /* XCRemoteSwiftPackageReference "NGUIKitHelpers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThierryNg/NGUIKitHelpers.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -511,6 +523,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A15C45829ED6FD000D2838D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8A15C46829ED898600D2838D /* NGUIKitHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A15C46729ED898600D2838D /* XCRemoteSwiftPackageReference "NGUIKitHelpers" */;
+			productName = NGUIKitHelpers;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

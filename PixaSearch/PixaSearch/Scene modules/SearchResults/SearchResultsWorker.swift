@@ -8,7 +8,7 @@
 
 class SearchResultsWorker: SearchResultsWorkingLogic {
 
-    func fetch(queryString: String, completion: ResultCompletion<ImageResponse>?) {
+    func fetch(queryString: String, completion: ResultCompletion<ImageListResponse>?) {
         let request = ImageListRequest(queryString: queryString)
 
         NetworkClient.shared.request(request) { result in

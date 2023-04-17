@@ -7,7 +7,7 @@
 
 import Alamofire
 
-final class ImageListRequest: Request<ImageResponse> {
+final class ImageListRequest: Request<ImageListResponse> {
 
     override var parameters: Parameters? { [
         "key": "18021445-326cf5bcd3658777a9d22df6f",
