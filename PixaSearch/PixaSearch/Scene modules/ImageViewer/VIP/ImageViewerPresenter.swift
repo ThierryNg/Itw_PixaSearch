@@ -18,5 +18,10 @@ extension ImageViewerPresenter: ImageViewerPresentationLogic {
 
     func present(_ response: ImageViewer.Display.Response) {
 
+        let models: [ImageViewer.ViewModel] = response.images.map { image in
+                .init(imagePath: image.largeImageURL, userName: image.user)
+        }
+
+        self.viewController?.display(ImageViewer.Display.ViewModel(models: models))
     }
 }

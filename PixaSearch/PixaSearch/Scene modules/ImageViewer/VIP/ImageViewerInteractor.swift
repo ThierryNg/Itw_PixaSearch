@@ -10,16 +10,19 @@ class ImageViewerInteractor {
     var presenter: ImageViewerPresentationLogic
     var worker: ImageViewerWorkingLogic
 
-    init(presenter: ImageViewerPresentationLogic, worker: ImageViewerWorkingLogic) {
+    private(set) var images: [PixaImage] = []
+
+    init(presenter: ImageViewerPresentationLogic, worker: ImageViewerWorkingLogic, images: [PixaImage]) {
         self.presenter = presenter
         self.worker = worker
+        self.images = images
     }
 }
 
 extension ImageViewerInteractor: ImageViewerBusinessLogic {
 
     func request(_ request: ImageViewer.Display.Request) {
-        
+        self.presenter.present(ImageViewer.Display.Response(images: self.images))
     }
 }
 

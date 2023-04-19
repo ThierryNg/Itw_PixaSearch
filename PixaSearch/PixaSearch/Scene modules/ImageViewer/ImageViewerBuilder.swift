@@ -13,7 +13,7 @@ final class ImageViewerBuilder {
     static func build(images: [PixaImage]) -> UIViewController {
         let viewController = ImageViewerViewController()
         let presenter = ImageViewerPresenter(viewController: viewController)
-        let interactor = ImageViewerInteractor(presenter: presenter, worker: ImageViewerWorker())
+        let interactor = ImageViewerInteractor(presenter: presenter, worker: ImageViewerWorker(), images: images)
         let router = ImageViewerRouter(viewController: viewController, dataStore: interactor)
 
         viewController.interactor = interactor

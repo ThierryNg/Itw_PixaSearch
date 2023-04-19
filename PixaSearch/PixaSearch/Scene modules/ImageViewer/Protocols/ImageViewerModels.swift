@@ -11,8 +11,17 @@ enum ImageViewer {
     enum Display {
         struct Request {}
 
-        struct Response {}
+        struct Response {
+            let images: [PixaImage]
+        }
 
-        struct ViewModel {}
+        struct ViewModel {
+            let models: [ImageViewer.ViewModel]
+        }
+    }
+
+    struct ViewModel {
+        let imagePath: String
+        let userName: String
     }
 }

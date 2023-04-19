@@ -31,6 +31,6 @@ class ImageViewerViewController: UIViewController {
 extension ImageViewerViewController: ImageViewerDisplayLogic {
 
     func display(_ viewModel: ImageViewer.Display.ViewModel) {
-
+        self.rootView.viewModel = viewModel.models
     }
 }
