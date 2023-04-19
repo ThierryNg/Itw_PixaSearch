@@ -29,4 +29,8 @@ extension SearchResultsPresenter: SearchResultsPresentationLogic {
 
         self.viewController?.display(SearchResults.Search.ViewModel(totalCount: imageListResponse.totalHits, images: imageList, errorMessage: nil))
     }
+
+    func present(_ response: SearchResults.Select.Response) {
+        self.viewController?.display(SearchResults.Select.ViewModel(selectedIndexes: response.selectedIndexes))
+    }
 }

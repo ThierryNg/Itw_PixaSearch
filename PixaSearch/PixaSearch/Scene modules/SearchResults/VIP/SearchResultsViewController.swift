@@ -35,8 +35,12 @@ class SearchResultsViewController: UIViewController {
     // MARK: - Lifecycle
 
     override func loadView() {
+        super.loadView()
 
         self.view = self.rootView
+        self.rootView.openAction = { indexes in
+            self.interactor?.request(SearchResults.Select.Request(selectedIndexes: indexes))
+        }
     }
 
     override func viewDidLoad() {
@@ -63,7 +67,6 @@ class SearchResultsViewController: UIViewController {
 extension SearchResultsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        print("Text changed")
         NSObject.cancelPreviousPerformRequests(
             withTarget: self,
             selector: self.searchThrottleSelector,
@@ -77,5 +80,9 @@ extension SearchResultsViewController: SearchResultsDisplayLogic {
 
     func display(_ viewModel: SearchResults.Search.ViewModel) {
         self.rootView.viewModel = viewModel
+    }
+
+    func display(_ viewModel: SearchResults.Select.ViewModel) {
+        self.router?.showImageViewer(for: viewModel.selectedIndexes)
     }
 }

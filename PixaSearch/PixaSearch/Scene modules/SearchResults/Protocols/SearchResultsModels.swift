@@ -6,6 +6,8 @@
 //  Copyright (c) 2023. All rights reserved.
 //
 
+import Foundation
+
 enum SearchResults {
 
     // MARK: - Cases
@@ -29,12 +31,16 @@ enum SearchResults {
 
     enum Select {
         struct Request {
-            let selectedIdentifierSet: Set<Int>
+            let selectedIndexes: [IndexPath]
         }
 
-        struct Response {}
+        struct Response {
+            let selectedIndexes: [Int]
+        }
 
-        struct ViewModel {}
+        struct ViewModel {
+            let selectedIndexes: [Int]
+        }
     }
 
     // MARK: - Models
