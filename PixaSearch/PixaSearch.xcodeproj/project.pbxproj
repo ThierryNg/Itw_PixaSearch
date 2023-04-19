@@ -33,6 +33,15 @@
 		8A15C47029EF000800D2838D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8A15C46F29EF000800D2838D /* AlamofireImage */; };
 		8A15C47329EF177C00D2838D /* PixaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47229EF177C00D2838D /* PixaView.swift */; };
 		8A15C47629EF17A700D2838D /* ImageCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47529EF17A700D2838D /* ImageCollectionFooterView.swift */; };
+		8A15C48129EFD40E00D2838D /* ImageViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47829EFD40E00D2838D /* ImageViewerPresenter.swift */; };
+		8A15C48229EFD40E00D2838D /* ImageViewerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47929EFD40E00D2838D /* ImageViewerWorker.swift */; };
+		8A15C48329EFD40E00D2838D /* ImageViewerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47A29EFD40E00D2838D /* ImageViewerRouter.swift */; };
+		8A15C48429EFD40E00D2838D /* ImageViewerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47B29EFD40E00D2838D /* ImageViewerModels.swift */; };
+		8A15C48529EFD40E00D2838D /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47C29EFD40E00D2838D /* ImageViewerViewController.swift */; };
+		8A15C48629EFD40E00D2838D /* ImageViewerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47D29EFD40E00D2838D /* ImageViewerProtocols.swift */; };
+		8A15C48729EFD40E00D2838D /* ImageViewerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47E29EFD40E00D2838D /* ImageViewerBuilder.swift */; };
+		8A15C48829EFD40E00D2838D /* ImageViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47F29EFD40E00D2838D /* ImageViewerInteractor.swift */; };
+		8A15C48929EFD40E00D2838D /* ImageViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C48029EFD40E00D2838D /* ImageViewerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +70,15 @@
 		8A15C46B29EE77DC00D2838D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		8A15C47229EF177C00D2838D /* PixaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaView.swift; sourceTree = "<group>"; };
 		8A15C47529EF17A700D2838D /* ImageCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionFooterView.swift; sourceTree = "<group>"; };
+		8A15C47829EFD40E00D2838D /* ImageViewerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerPresenter.swift; sourceTree = "<group>"; };
+		8A15C47929EFD40E00D2838D /* ImageViewerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerWorker.swift; sourceTree = "<group>"; };
+		8A15C47A29EFD40E00D2838D /* ImageViewerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerRouter.swift; sourceTree = "<group>"; };
+		8A15C47B29EFD40E00D2838D /* ImageViewerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerModels.swift; sourceTree = "<group>"; };
+		8A15C47C29EFD40E00D2838D /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
+		8A15C47D29EFD40E00D2838D /* ImageViewerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerProtocols.swift; sourceTree = "<group>"; };
+		8A15C47E29EFD40E00D2838D /* ImageViewerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerBuilder.swift; sourceTree = "<group>"; };
+		8A15C47F29EFD40E00D2838D /* ImageViewerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerInteractor.swift; sourceTree = "<group>"; };
+		8A15C48029EFD40E00D2838D /* ImageViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				8A15C44029ED67F100D2838D /* SearchResults */,
+				8A15C47729EFD3CC00D2838D /* ImageViewer */,
 			);
 			path = "Scene modules";
 			sourceTree = "<group>";
@@ -210,6 +229,38 @@
 				8A15C47229EF177C00D2838D /* PixaView.swift */,
 			);
 			path = "UIKit Extensions - Subclasses";
+			sourceTree = "<group>";
+		};
+		8A15C47729EFD3CC00D2838D /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C47E29EFD40E00D2838D /* ImageViewerBuilder.swift */,
+				8A15C48A29EFD42300D2838D /* Protocols */,
+				8A15C48B29EFD43900D2838D /* VIP */,
+				8A15C47929EFD40E00D2838D /* ImageViewerWorker.swift */,
+				8A15C47A29EFD40E00D2838D /* ImageViewerRouter.swift */,
+				8A15C48029EFD40E00D2838D /* ImageViewerView.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		8A15C48A29EFD42300D2838D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C47B29EFD40E00D2838D /* ImageViewerModels.swift */,
+				8A15C47D29EFD40E00D2838D /* ImageViewerProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A15C48B29EFD43900D2838D /* VIP */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C47829EFD40E00D2838D /* ImageViewerPresenter.swift */,
+				8A15C47C29EFD40E00D2838D /* ImageViewerViewController.swift */,
+				8A15C47F29EFD40E00D2838D /* ImageViewerInteractor.swift */,
+			);
+			path = VIP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A15C48929EFD40E00D2838D /* ImageViewerView.swift in Sources */,
 				8A15C44C29ED681A00D2838D /* SearchResultsRouter.swift in Sources */,
 				8A15C45C29ED6FE700D2838D /* Request.swift in Sources */,
 				8A15C42729ED615700D2838D /* AppDelegate.swift in Sources */,
+				8A15C48229EFD40E00D2838D /* ImageViewerWorker.swift in Sources */,
 				8A15C42929ED615700D2838D /* SceneDelegate.swift in Sources */,
 				8A15C46029ED753C00D2838D /* ImageListRequest.swift in Sources */,
 				8A15C46329ED75F100D2838D /* ImageListResponse.swift in Sources */,
@@ -304,14 +357,21 @@
 				8A15C45E29ED6FEE00D2838D /* Response.swift in Sources */,
 				8A15C44D29ED681A00D2838D /* SearchResultsModels.swift in Sources */,
 				8A15C44E29ED681A00D2838D /* SearchResultsViewController.swift in Sources */,
+				8A15C48329EFD40E00D2838D /* ImageViewerRouter.swift in Sources */,
+				8A15C48529EFD40E00D2838D /* ImageViewerViewController.swift in Sources */,
+				8A15C48129EFD40E00D2838D /* ImageViewerPresenter.swift in Sources */,
 				8A15C45229ED681A00D2838D /* SearchResultsView.swift in Sources */,
 				8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */,
 				8A15C44A29ED681A00D2838D /* SearchResultsPresenter.swift in Sources */,
 				8A15C45029ED681A00D2838D /* SearchResultsBuilder.swift in Sources */,
 				8A15C47629EF17A700D2838D /* ImageCollectionFooterView.swift in Sources */,
+				8A15C48429EFD40E00D2838D /* ImageViewerModels.swift in Sources */,
+				8A15C48629EFD40E00D2838D /* ImageViewerProtocols.swift in Sources */,
+				8A15C48729EFD40E00D2838D /* ImageViewerBuilder.swift in Sources */,
 				8A15C46C29EE77DC00D2838D /* ImageCollectionCell.swift in Sources */,
 				8A15C45129ED681A00D2838D /* SearchResultsInteractor.swift in Sources */,
 				8A15C45729ED6E3100D2838D /* NetworkClient.swift in Sources */,
+				8A15C48829EFD40E00D2838D /* ImageViewerInteractor.swift in Sources */,
 				8A15C47329EF177C00D2838D /* PixaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

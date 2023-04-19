@@ -47,19 +47,69 @@ final class SearchResultsView: PixaView {
         return collectionView
     }()
 
+    private lazy var openButton: UIButton = {
+        let button = UIButton()
+
+        button.backgroundColor = .systemMint
+        button.setTitle("Open", for: .init())
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapOpenButton), for: .touchUpInside)
+        return button
+    }()
+
+    private var openButtonHeightConstraint: NSLayoutConstraint?
+
     // MARK: - Config
 
     override func setupContent() {
         self.backgroundColor = .lightGray
 
         self.addSubview(self.collectionView)
+        self.addSubview(self.openButton)
 
         collectionView.dataSource = self.dataSource
     }
 
     override func setupLayout() {
         self.collectionView.pinToSuperview(excluding: [.bottom])
-        self.collectionView.bottomAnchor ~= self.safeAreaLayoutGuide.bottomAnchor
+        self.collectionView.bottomAnchor ~= self.openButton.topAnchor
+
+        self.openButton.leadingAnchor ~= self.safeAreaLayoutGuide.leadingAnchor
+        self.openButton.trailingAnchor ~= self.safeAreaLayoutGuide.trailingAnchor
+
+        self.openButtonHeightConstraint = self.openButton.heightAnchor.constraint(equalToConstant: 0)
+        self.openButtonHeightConstraint?.isActive = true
+        self.openButton.bottomAnchor ~= self.safeAreaLayoutGuide.bottomAnchor
+    }
+
+    // MARK: - Actions
+
+    var openAction: Completion<[IndexPath]>? = nil
+
+    @objc
+    private func didTapOpenButton() {
+        guard let selectedIndexes = self.collectionView.indexPathsForSelectedItems else { return }
+
+        self.openAction?(selectedIndexes)
+    }
+
+    // MARK: - Animations
+
+    private func showOpenButton() {
+        self.openButtonHeightConstraint?.constant = 44
+        self.setNeedsLayout()
+        UIView.animate(withDuration: 0.36) {
+            self.layoutIfNeeded()
+        }
+    }
+
+    private func hideOpenButton() {
+        self.openButtonHeightConstraint?.constant = 0
+        self.setNeedsLayout()
+        UIView.animate(withDuration: 0.36) {
+            self.layoutIfNeeded()
+        }
     }
 }
 
@@ -104,6 +154,8 @@ extension SearchResultsView {
     
 }
 
+// MARK: - CollectionView delegate
+
 extension SearchResultsView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
@@ -122,13 +174,21 @@ extension SearchResultsView: UICollectionViewDelegateFlowLayout {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionCell else {
             return
         }
+
         cell.showSelection()
+        if let indexes = collectionView.indexPathsForSelectedItems, indexes.count >= 2 {
+            self.showOpenButton()
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionCell else {
             return
         }
+
         cell.hideSelection()
+        if let indexes = collectionView.indexPathsForSelectedItems, indexes.count <= 2 {
+            self.hideOpenButton()
+        }
     }
 }

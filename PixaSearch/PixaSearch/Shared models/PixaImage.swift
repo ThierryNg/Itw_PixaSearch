@@ -11,9 +11,9 @@ struct PixaImage: Codable {
 
     let id: Int
     let previewURL: String
+
     let largeImageURL: String
-    // TODO: Add user property when adding ImageDetail scene to display images with more details
-    //  let user: String
+    let user: String
 }
 
 extension PixaImage: Hashable {
