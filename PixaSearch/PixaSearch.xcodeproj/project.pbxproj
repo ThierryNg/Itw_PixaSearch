@@ -29,6 +29,10 @@
 		8A15C46329ED75F100D2838D /* ImageListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46229ED75F100D2838D /* ImageListResponse.swift */; };
 		8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46529ED76D200D2838D /* PixaImage.swift */; };
 		8A15C46929ED898600D2838D /* NGUIKitHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 8A15C46829ED898600D2838D /* NGUIKitHelpers */; };
+		8A15C46C29EE77DC00D2838D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C46B29EE77DC00D2838D /* ImageCollectionCell.swift */; };
+		8A15C47029EF000800D2838D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8A15C46F29EF000800D2838D /* AlamofireImage */; };
+		8A15C47329EF177C00D2838D /* PixaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47229EF177C00D2838D /* PixaView.swift */; };
+		8A15C47629EF17A700D2838D /* ImageCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C47529EF17A700D2838D /* ImageCollectionFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		8A15C45F29ED753C00D2838D /* ImageListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListRequest.swift; sourceTree = "<group>"; };
 		8A15C46229ED75F100D2838D /* ImageListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListResponse.swift; sourceTree = "<group>"; };
 		8A15C46529ED76D200D2838D /* PixaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaImage.swift; sourceTree = "<group>"; };
+		8A15C46B29EE77DC00D2838D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
+		8A15C47229EF177C00D2838D /* PixaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaView.swift; sourceTree = "<group>"; };
+		8A15C47529EF17A700D2838D /* ImageCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			files = (
 				8A15C46929ED898600D2838D /* NGUIKitHelpers in Frameworks */,
 				8A15C45A29ED6FD000D2838D /* Alamofire in Frameworks */,
+				8A15C47029EF000800D2838D /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,7 @@
 				8A15C43C29ED630000D2838D /* Network */,
 				8A15C46429ED76B100D2838D /* Shared models */,
 				8A15C43F29ED633900D2838D /* Scene modules */,
+				8A15C47129EF173F00D2838D /* UIKit Extensions - Subclasses */,
 				8A15C43E29ED631F00D2838D /* Resources */,
 				8A15C43429ED615800D2838D /* Info.plist */,
 			);
@@ -141,9 +150,9 @@
 				8A15C44729ED681A00D2838D /* SearchResultsBuilder.swift */,
 				8A15C45429ED684800D2838D /* Protocols */,
 				8A15C45329ED683500D2838D /* VIP */,
+				8A15C46A29EE779D00D2838D /* Views */,
 				8A15C44229ED681A00D2838D /* SearchResultsWorker.swift */,
 				8A15C44329ED681A00D2838D /* SearchResultsRouter.swift */,
-				8A15C44929ED681A00D2838D /* SearchResultsView.swift */,
 			);
 			path = SearchResults;
 			sourceTree = "<group>";
@@ -185,6 +194,24 @@
 			path = "Shared models";
 			sourceTree = "<group>";
 		};
+		8A15C46A29EE779D00D2838D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C44929ED681A00D2838D /* SearchResultsView.swift */,
+				8A15C46B29EE77DC00D2838D /* ImageCollectionCell.swift */,
+				8A15C47529EF17A700D2838D /* ImageCollectionFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A15C47129EF173F00D2838D /* UIKit Extensions - Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				8A15C47229EF177C00D2838D /* PixaView.swift */,
+			);
+			path = "UIKit Extensions - Subclasses";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +231,7 @@
 			packageProductDependencies = (
 				8A15C45929ED6FD000D2838D /* Alamofire */,
 				8A15C46829ED898600D2838D /* NGUIKitHelpers */,
+				8A15C46F29EF000800D2838D /* AlamofireImage */,
 			);
 			productName = PixaSearch;
 			productReference = 8A15C42329ED615700D2838D /* PixaSearch.app */;
@@ -236,6 +264,7 @@
 			packageReferences = (
 				8A15C45829ED6FD000D2838D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8A15C46729ED898600D2838D /* XCRemoteSwiftPackageReference "NGUIKitHelpers" */,
+				8A15C46E29EF000800D2838D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 8A15C42429ED615700D2838D /* Products */;
 			projectDirPath = "";
@@ -279,8 +308,11 @@
 				8A15C46629ED76D200D2838D /* PixaImage.swift in Sources */,
 				8A15C44A29ED681A00D2838D /* SearchResultsPresenter.swift in Sources */,
 				8A15C45029ED681A00D2838D /* SearchResultsBuilder.swift in Sources */,
+				8A15C47629EF17A700D2838D /* ImageCollectionFooterView.swift in Sources */,
+				8A15C46C29EE77DC00D2838D /* ImageCollectionCell.swift in Sources */,
 				8A15C45129ED681A00D2838D /* SearchResultsInteractor.swift in Sources */,
 				8A15C45729ED6E3100D2838D /* NetworkClient.swift in Sources */,
+				8A15C47329EF177C00D2838D /* PixaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +548,14 @@
 				kind = branch;
 			};
 		};
+		8A15C46E29EF000800D2838D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -528,6 +568,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A15C46729ED898600D2838D /* XCRemoteSwiftPackageReference "NGUIKitHelpers" */;
 			productName = NGUIKitHelpers;
+		};
+		8A15C46F29EF000800D2838D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A15C46E29EF000800D2838D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
