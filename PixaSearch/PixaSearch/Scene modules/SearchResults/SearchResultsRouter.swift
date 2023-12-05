@@ -21,4 +21,15 @@ class SearchResultsRouter {
 
 extension SearchResultsRouter: SearchResultsRoutingLogic {
 
+    func showImageViewer(for indexes: [Int]) {
+
+        guard let dataStore else { return }
+
+        var images: [PixaImage] = []
+        indexes.forEach { images.append(dataStore.images[$0]) }
+
+        let destinationViewController = ImageViewerBuilder.build(images: images)
+
+        self.viewController?.navigationController?.pushViewController(destinationViewController, animated: true)
+    }
 }
